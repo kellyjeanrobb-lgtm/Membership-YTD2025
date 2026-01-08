@@ -95,22 +95,22 @@
                                 {/* Applicants */}
                                 <div className="bg-slate-300 h-10 w-full rounded-t-lg flex items-center justify-between px-4 text-slate-700 shadow-sm">
                                     <span className="text-sm font-bold uppercase">Applicants</span>
-                                    <span className="font-bold">106</span>
+                                    <span className="font-bold text-sm">106</span>
                                 </div>
                                 {/* Waitlist */}
                                 <div className="bg-sky-300 h-10 w-[90%] mx-auto flex items-center justify-between px-4 text-sky-900 shadow-sm">
                                     <span className="text-sm font-bold uppercase">Waitlist</span>
-                                    <span className="font-bold">21</span>
+                                    <span className="font-bold text-sm">21</span>
                                 </div>
                                 {/* Processing */}
                                 <div className="bg-blue-400 h-10 w-[80%] mx-auto flex items-center justify-between px-4 text-white shadow-sm">
                                     <span className="text-sm font-bold uppercase">Processing</span>
-                                    <span className="font-bold">109</span>
+                                    <span className="font-bold text-sm">109</span>
                                 </div>
                                 {/* Committee */}
                                 <div className="bg-indigo-500 h-10 w-[70%] mx-auto flex items-center justify-between px-4 text-white shadow-sm">
                                     <span className="text-sm font-bold uppercase">Cmte. Review</span>
-                                    <span className="font-bold">84</span>
+                                    <span className="font-bold text-sm">84</span>
                                 </div>
                                 {/* Invited */}
                                 <div className="bg-indigo-700 h-12 w-[60%] mx-auto rounded-b-lg flex items-center justify-between px-3 text-white shadow-md relative z-10">
@@ -346,6 +346,8 @@
                 </div>
             )
         }
+
+        // REMOVED Member Type Breakdown Table
 
         const MembershipDashboard = () => {
             // December Data (Updated from Nov)
@@ -607,34 +609,46 @@
                                 <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">Membership Dashboard</h1>
                                 <p className="text-slate-500 mt-2 text-lg">2025 Performance Overview</p>
                             </div>
-                            <div className="mt-6 md:mt-0 flex flex-col sm:flex-row gap-4">
+                            <div className="mt-6 md:mt-0 flex flex-col sm:flex-row flex-wrap gap-4 justify-end">
                                 <div className="px-6 py-4 bg-white rounded-xl border border-slate-200 shadow-sm text-center w-full sm:w-auto">
                                     <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Total Members</span>
-                                    <div className="text-3xl font-black text-slate-800">21,837</div>
-                                    <div className="flex justify-center items-center mt-1">
-                                         <span className="flex items-center text-[10px] font-bold text-red-600 bg-red-50 px-1.5 py-0.5 rounded-full">
-                                            <TrendingDown className="w-3 h-3 mr-0.5" />
-                                            -1.62%
-                                        </span>
+                                    <div className="flex items-baseline justify-center gap-2">
+                                        <span className="text-3xl font-black text-slate-800">21,837</span>
+                                        <div className="flex flex-col gap-1 items-start">
+                                            <span className="flex items-center text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                                                <TrendingUp className="w-3 h-3 mr-1" />
+                                                +0.17% MoM
+                                            </span>
+                                            <span className="flex items-center text-[10px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">
+                                                <TrendingDown className="w-3 h-3 mr-1" />
+                                                -1.62% YoY
+                                            </span>
+                                        </div>
                                     </div>
                                     <p className="text-xs text-slate-400 mt-2 max-w-[150px] mx-auto leading-tight">Total number of active child, junior, intermediate or adult members</p>
                                 </div>
                                 <div className="px-6 py-4 bg-white rounded-xl border border-slate-200 shadow-sm text-center w-full sm:w-auto">
                                     <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Total Accounts</span>
-                                    <div className="text-3xl font-black text-slate-800">11,588</div>
-                                    <div className="flex justify-center items-center mt-1">
-                                         <span className="flex items-center text-[10px] font-bold text-red-600 bg-red-50 px-1.5 py-0.5 rounded-full">
-                                            <TrendingDown className="w-3 h-3 mr-0.5" />
-                                            -1.70%
-                                        </span>
+                                    <div className="flex items-baseline justify-center gap-2">
+                                        <span className="text-3xl font-black text-slate-800">11,588</span>
+                                        <div className="flex flex-col gap-1 items-start">
+                                            <span className="flex items-center text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                                                <TrendingUp className="w-3 h-3 mr-1" />
+                                                +1.86% MoM
+                                            </span>
+                                            <span className="flex items-center text-[10px] font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">
+                                                <TrendingDown className="w-3 h-3 mr-1" />
+                                                -2.79% YoY
+                                            </span>
+                                        </div>
                                     </div>
                                     <p className="text-xs text-slate-400 mt-2 max-w-[150px] mx-auto leading-tight">An account = one membership. One family, one couple, or one individual.</p>
                                 </div>
                                 <div className="px-6 py-4 bg-white rounded-xl border border-slate-200 shadow-sm text-center w-full sm:w-auto">
                                     <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Dues Revenue</span>
-                                    <div className="text-3xl font-black text-slate-800">$35.28M</div>
-                                    <div className="flex justify-center items-center mt-1">
-                                         <span className="flex items-center text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                                    <div className="flex items-baseline justify-center gap-2">
+                                        <span className="text-3xl font-black text-slate-800">$35.28M</span>
+                                        <span className="flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
                                             <CheckCircle className="w-3 h-3 mr-0.5" />
                                             On Target
                                         </span>
@@ -642,10 +656,10 @@
                                 </div>
                                 {/* Avg Monthly Elections */}
                                 <div className="px-6 py-4 bg-white rounded-xl border border-slate-200 shadow-sm text-center w-full sm:w-auto">
-                                    <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Avg Elections '25</span>
-                                    <div className="text-3xl font-black text-slate-800">30</div>
-                                    <div className="flex justify-center items-center mt-1">
-                                         <span className="flex items-center text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
+                                    <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Average Monthly Elections 2025</span>
+                                    <div className="flex items-baseline justify-center gap-2">
+                                        <span className="text-3xl font-black text-slate-800">30</span>
+                                        <span className="flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">
                                             <TrendingUp className="w-3 h-3 mr-0.5" />
                                             20% YoY
                                         </span>
@@ -653,10 +667,10 @@
                                 </div>
                                 {/* Avg Monthly Resignations */}
                                 <div className="px-6 py-4 bg-white rounded-xl border border-slate-200 shadow-sm text-center w-full sm:w-auto">
-                                    <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Avg Resignations '25</span>
-                                    <div className="text-3xl font-black text-slate-800">52</div>
-                                    <div className="flex justify-center items-center mt-1">
-                                         <span className="flex items-center text-[10px] font-bold text-red-600 bg-red-50 px-1.5 py-0.5 rounded-full">
+                                    <span className="text-sm font-bold text-slate-400 uppercase tracking-widest block mb-1">Average Monthly Resignations 2025</span>
+                                    <div className="flex items-baseline justify-center gap-2">
+                                        <span className="text-3xl font-black text-slate-800">52</span>
+                                        <span className="flex items-center text-xs font-bold text-red-600 bg-red-50 px-1.5 py-0.5 rounded-full">
                                             <TrendingUp className="w-3 h-3 mr-0.5" />
                                             10% YoY
                                         </span>
@@ -683,7 +697,7 @@
                                                 <metric.icon className={`w-5 h-5 ${metric.color}`} />
                                             </div>
                                             {metric.trend && (
-                                                <span className={`flex items-center text-[10px] font-bold ${metric.trendColor || 'text-emerald-600'} ${metric.trendBg || 'bg-emerald-50'} px-2 py-1 rounded-full whitespace-nowrap`}>
+                                                <span className={`flex items-center text-xs font-bold ${metric.trendColor || 'text-emerald-600'} ${metric.trendBg || 'bg-emerald-50'} px-2 py-0.5 rounded-full whitespace-nowrap`}>
                                                     <TrendIconComponent className="w-3 h-3 mr-1" />
                                                     {metric.trend}
                                                 </span>
@@ -716,11 +730,13 @@
                                     <TrendingUp className="w-5 h-5 text-emerald-600" />
                                 </div>
                             </div>
-                            <div className="text-2xl font-bold text-emerald-600">+$1,023.60</div>
-                            <p className="text-sm text-emerald-600 mt-1 flex items-center font-medium">
-                                <TrendingUp className="w-3 h-3 mr-1" />
-                                New Adds {'>'} Resignations
-                            </p>
+                            <div className="flex items-baseline gap-2 mb-1">
+                                <div className="text-2xl font-bold text-emerald-600">+$1,023.60</div>
+                                <span className="flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                                    <TrendingUp className="w-3 h-3 mr-1" />
+                                    New Adds {'>'} Resignations
+                                </span>
+                            </div>
                         </div>
 
                         {/* New Accounts Value */}
@@ -731,8 +747,10 @@
                                     <UserPlus className="w-5 h-5 text-emerald-600" />
                                 </div>
                             </div>
-                            <div className="text-2xl font-bold text-emerald-600">+$7,695.58</div>
-                            <p className="text-sm text-slate-400 mt-1">From 27 new accounts</p>
+                            <div className="flex items-baseline gap-2 mb-1">
+                                <div className="text-2xl font-bold text-emerald-600">+$7,695.58</div>
+                                <p className="text-sm text-slate-400">From 27 new accounts</p>
+                            </div>
                         </div>
 
                         {/* Resigned Value */}
@@ -743,8 +761,10 @@
                                     <UserMinus className="w-5 h-5 text-orange-600" />
                                 </div>
                             </div>
-                            <div className="text-2xl font-bold text-orange-600">-$6,671.88</div>
-                            <p className="text-sm text-slate-400 mt-1">From 40 resigned accounts</p>
+                            <div className="flex items-baseline gap-2 mb-1">
+                                <div className="text-2xl font-bold text-orange-600">-$6,671.88</div>
+                                <p className="text-sm text-slate-400">From 40 resigned accounts</p>
+                            </div>
                         </div>
                     </div>
 
